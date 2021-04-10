@@ -1,0 +1,25 @@
+<%= render 'shared/card_list',
+list: @animals,
+order: 'id',
+sort_all: true,
+show_new: true,
+card_class: 'info',
+table_class: 'bootstrap-table-mobile',
+show_columns: [
+  'id',
+  'name',
+  'breed',
+  'height',
+  'coat',
+  'birthday',
+  'source',
+  'passport',
+  'chip',
+  'father',
+  'mother',
+  'sex',
+  'apt',
+  'unfit_date',
+  'reason_unfit'
+]
+%>

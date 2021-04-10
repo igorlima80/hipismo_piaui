@@ -1,0 +1,19 @@
+<%= render 'shared/card_list',
+  list: @services,
+  order: 'id',
+  sort_all: true,
+  show_new: true,
+  card_class: 'info',
+  table_class: 'bootstrap-table-mobile',
+  show_columns: [
+    'id',
+    'service_type.name',
+    'provider.company_name',
+    'expected_date',
+    'start_date',
+    'end_date',
+    'total_price'
+  ]
+%>
+
+    

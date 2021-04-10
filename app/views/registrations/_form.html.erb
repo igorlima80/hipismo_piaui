@@ -1,0 +1,68 @@
+<%= simple_form_for([@person, @registration]) do |f| %>  
+
+  <div class="card card-outline card-info">
+    <div class="card-header">
+      <h3 class="card-title">
+        Dados do Matrícula
+          
+      </h3>
+    </div>
+
+    <div class="card-body">
+      <div class="row">       
+        <%= f.input :registration_date,  html5: true,  wrapper_html: { class: 'col-md-3' } %>  
+        <%= f.input :value, wrapper_html: { class: 'col-md-3' } %>  
+        <%= f.input :payment_day, wrapper_html: { class: 'col-md-3' } %>         
+        <%= f.association :payment_type, wrapper_html: { class: 'col-md-12' } %> 
+      </div>
+    </div>  
+  </div>
+
+
+  <div class="card card-outline card-info">
+      <div class="card-header">
+        <h3 class="card-title">
+         Dados Médicos
+        </h3>
+      </div>
+
+      <div class="card-body">
+        <div class="row">       
+          <%= f.input :have_allergy,  html5: true,  wrapper_html: { class: 'col-md-3' } %>  
+          <%= f.input :use_medicine, wrapper_html: { class: 'col-md-3' } %>  
+          <%= f.input :have_surgery, wrapper_html: { class: 'col-md-3' } %>         
+          <%= f.input :health_problem, wrapper_html: { class: 'col-md-3' } %> 
+        </div>
+      </div>  
+    </div>
+
+
+
+  <div class="card card-outline card-info">
+    <div class="card-header">
+      <h3 class="card-title">
+        Dados do Responsável
+      </h3>
+    </div>  
+  
+    <div class="card-body">   
+      <%= f.simple_fields_for :responsible do |responsible| %>
+        <%= render 'responsible_fields', f: responsible %>
+      <% end %>
+    </div>  
+
+
+
+
+</div>
+
+
+
+
+  <div class="card card-outline card-info">
+    <div class="card-footer">
+      <%= link_to 'Cancelar', @registration.person, class: "btn btn-default" %>
+      <%= f.submit class: "btn btn-info" %>
+    </div>
+  </div>
+<% end %>

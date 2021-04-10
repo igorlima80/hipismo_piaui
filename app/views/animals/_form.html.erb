@@ -1,0 +1,43 @@
+<%= simple_form_for(object) do |f| %>  
+
+    <div class="card card-outline card-info">
+      <div class="card-header">
+        <h3 class="card-title">
+          Dados do Animal            
+        </h3>
+      </div>
+  
+      <div class="card-body">
+        <div class="row">       
+            <%= f.input :name, wrapper_html: { class: 'col-md-3' } %>  
+            <%= f.input :breed, wrapper_html: { class: 'col-md-3' } %> 
+            <%= f.input :height, wrapper_html: { class: 'col-md-3' } %>   
+            <%= f.input :coat, wrapper_html: { class: 'col-md-3' } %>  
+            <%= f.input :source, wrapper_html: { class: 'col-md-3' } %> 
+            <%= f.input :birthday,  html5: true,  wrapper_html: { class: 'col-md-3' } %>           
+            <%= f.input :passport, wrapper_html: { class: 'col-md-3' } %> 
+            <%= f.input :chip, wrapper_html: { class: 'col-md-3' } %>   
+            <%= f.input :father, wrapper_html: { class: 'col-md-3' } %>       
+            <%= f.input :mother, wrapper_html: { class: 'col-md-3' } %>
+            <%= f.input :sex, wrapper_html: { class: 'col-md-3' } %> 
+            <%= f.input :apt, wrapper_html: { class: 'col-md-3' } %> 
+            <%= f.input :unfit_date,  html5: true,  wrapper_html: { class: 'col-md-3' } %>
+            <%= f.input :reason_unfit,  wrapper_html: { class: 'col-md-12' } %>
+        </div>
+      </div>  
+    </div>
+  
+ 
+  
+
+  
+  
+  
+  
+    <div class="card card-outline card-info">
+      <div class="card-footer">
+        <%= link_to 'Cancelar', @animal, class: "btn btn-default" %>
+        <%= f.submit class: "btn btn-info" %>
+      </div>
+    </div>
+  <% end %>

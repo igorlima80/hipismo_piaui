@@ -1,0 +1,255 @@
+# encoding: UTF-8
+pt-BR:
+  enums:
+    accession:
+      status:
+        activated: Ativado
+        canceled: Cancelado
+    bank_check:
+      status:
+        pending: "Pendente"
+        analyzed: "Analisado"
+        paid: "Pago"
+    invoice:
+      status:
+        registered: "Cadastrada"
+        paid: "Paga"
+        cancelled: "Cancelada"
+        parceled_out: "Parcelada"   
+    plan_table:
+      status:
+        accept_membership: Aceitando Membros
+        active: Ativo
+        inactive: Inativo
+        registered: Cadastrado
+      type_coverage:
+        national: Nacional
+        state: Estadual
+      type_hospitalization:
+        apartment: Apartamento
+        nursery: Enfermaria
+      type_participation:
+        with_co_participation: Com co-participação
+        without_co_participation: Sem co-participação
+    analyze:
+      status:
+        approved: "Aprovado"
+        not_approved: "Não Aprovado"
+  activerecord:
+    models: &MODELS
+      accession: Adesão
+      animal: Animal
+      address: Endereço
+      bank_check: Chequinho
+      bank: banco
+      benefit_type: Tipo de Benefício
+      city: Cidade
+      country: País
+      county: Comarca
+      deposit: Depósito
+      deduction: Dedução
+      invoice: Fatura
+      kinship: Parentesco
+      material_category: Categoria de Produto
+      material: Produto
+      menu_item: Item de Menu
+      occupation: Carreira/Cargo
+      payment_type: Tipo de Pagamento
+      person: Pessoa
+      phone: Telefone
+      phone_type: Tipo de Telefone
+      place: Carreira/Cargo
+      plan: Plano
+      plan_table: Plano de Saúde
+      provider: Fornecedor
+      purchase: Compra
+      purchase_item: Item da Compra
+      readjustment: Reajuste
+      state: Estado
+      setting: Configurações
+      service_type: Tipo de Serviço
+      service: Serviço
+      team: Grupo
+      tax: Taxa
+      user: Usuário
+      workplace: Local de Trabalho
+      
+    attributes:
+      name_and_description: &BASIC
+        id: "#"
+        name: Nome
+        description: Descrição
+        kind: Tipo
+        created_at: Criação
+        updated_at: Atualização
+      accession:
+        <<: *BASIC
+        <<: *MODELS
+      animal:
+        <<: *BASIC
+        <<: *MODELS  
+        breed: Raça
+        height: Altura
+        coat: Pelagem
+        birthday: Nascimento
+        source: Origem
+        passport: Passaporte
+        father: Pai
+        mother: Mãe
+        sex: Sexo
+        apt: Apto
+        unfit_date: Data da Inaptidão
+        reason_unfit: Motivo da Inaptidão
+      address:
+        <<: *BASIC
+        <<: *MODELS
+        street: Logradouro
+        number: Número
+        complement: Complemento
+        district: Bairro
+        zipcode: CEP 
+      benefit_type:
+        <<: *BASIC
+        <<: *MODELS  
+      bank_check:
+        requested_value: Valor Solicitado
+        net_paycheck_value: Valor Líquido do Contracheque 
+        invoice_month: Mês da Fatura 
+        paycheck: Contracheque
+      bank:
+        <<: *BASIC
+        <<: *MODELS  
+        code: Código
+      city:
+        <<: *BASIC
+        <<: *MODELS
+      country:
+        <<: *BASIC
+        <<: *MODELS
+      deduction:
+        <<: *BASIC
+        <<: *MODELS  
+      deposit:
+        operation_date: Data da Operação
+        value: Valor         
+      invoice:
+        <<: *BASIC
+        <<: *MODELS  
+        fee: Taxa de Serviço
+        total_personal_plan: Total do Plano Pessoal
+        total_dependents_plan: Total dos Planos dos Dependentes
+        account_balance: Saldo da Conta
+        outstanding_balance: Saldo Devedor
+        total_bank_check: Total dos Chequinhos
+        total_value: Valor Total
+        month: Mês
+        <<: *BASIC
+        <<: *MODELS
+      material_category:
+        <<: *BASIC
+        <<: *MODELS 
+      material:
+        <<: *BASIC
+        <<: *MODELS
+        unity: Unidade
+        material_category: Categoria de Material     
+      menu_item:
+        <<: *BASIC
+        <<: *MODELS
+        icon: Ícone
+        published: Publicado
+        position: Posição
+        target: Alvo
+        permission: Permissão
+        permission_check: Checagem da Permissão
+        active_test: Teste de Ativo
+      occupation:
+        <<: *BASIC
+        <<: *MODELS  
+      payment_type:
+        <<: *BASIC
+        <<: *MODELS    
+      person:
+        <<: *BASIC
+        <<: *MODELS
+        admission: Admissão
+        birth: Nascimento
+        business_email: E-mail institucional
+        cpf: CPF
+        father: Pai
+        mother: Mãe
+        photo: Foto
+        registration: Matrícula
+        rg: RG
+        full_description: Descrição
+      provider:
+        <<: *BASIC
+        <<: *MODELS
+        company_name: Nome da Empresa
+        salesman: Vendedor 
+      phone:
+        <<: *BASIC
+        <<: *MODELS
+        number: Telefone
+      phone_type:
+        <<: *BASIC
+        <<: *MODELS  
+      place:
+        <<: *BASIC
+        <<: *MODELS
+      plan:
+        <<: *BASIC
+        <<: *MODELS
+        minimum_age: Idade mínima
+        value: Valor
+      plan_table:
+        <<: *BASIC
+        <<: *MODELS
+        status: Estado
+        type_coverage: Cobertura
+        type_hospitalization: Acomodação
+        type_participation: Participação
+      purchase:
+        <<: *BASIC
+        <<: *MODELS  
+        expected_date: Data Prevista
+        purchase_date: Data da Compra 
+      purchase_item:
+        <<: *BASIC
+        <<: *MODELS  
+        unity_price: Preço Unitário
+        amount: Quantidade    
+        material: Produto
+      readjustment:
+        <<: *BASIC
+        <<: *MODELS
+        percentage: Porcentagem
+        justification: Justificativa
+      state:
+        <<: *BASIC
+        <<: *MODELS
+        acronym: Sigla
+      service_type:
+        <<: *BASIC
+        <<: *MODELS 
+      service:
+        <<: *BASIC
+        <<: *MODELS 
+        expected_date: Data Prevista
+        start_date: Data de Início
+        end_date: Data de Término
+        total_price: Preço Total  
+      setting:
+        fee_with_service: Taxa com Serviço
+        fee_without_service: Taxa sem Serviço  
+        percentage_net_value_total: Percentual Total do Valor Líquido
+      team:
+        <<: *BASIC
+        <<: *MODELS
+      tax:
+        <<: *BASIC
+        <<: *MODELS   
+      user:
+        <<: *BASIC
+        <<: *MODELS
+        password: Senha
