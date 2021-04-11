@@ -12,7 +12,7 @@
       <div class="row">        
       <%= f.input :expected_date, html5: true,  wrapper_html: { class: 'col-md-3' } %>
       <%= f.input :purchase_date, html5: true,  wrapper_html: { class: 'col-md-3' } %>
-      <%= f.association :provider, wrapper_html: { class: 'col-md-3' } %>
+      <%= f.association :provider, label_method: :company_name, wrapper_html: { class: 'col-md-3' } %>
       <%= f.input :status, wrapper_html: { class: 'col-md-3' } %>
       </div>
     </div>  

@@ -29,7 +29,7 @@ class AddMenu < SeedMigration::Migration
       MenuItem.create name: 'Tipos de Pagamento', icon: 'fa fa-money-check-alt', link: 'payment_types_path', position: 7, target: '_self', permission: 'manage', permission_check: 'PaymentType', menu_item: admin, active_test: "controller_name == 'payment_types'", published: true
       
       
-      MenuItem.create name: 'Configurações', icon: 'fas fa-cogs', link: 'settings_path', position: 9, target: '_self', permission: 'manage', permission_check: 'Kinships', menu_item: admin, active_test: "controller_name == 'settings'", published: true
+      MenuItem.create name: 'Configurações', icon: 'fas fa-cogs', link: 'settings_path', position: 9, target: '_self', permission: 'manage', permission_check: 'Setting', menu_item: admin, active_test: "controller_name == 'settings'", published: true
       MenuItem.create name: 'Menu', icon: 'fas fa-bars', link: 'menu_items_path', position: 99, target: '_self', permission: 'manage', permission_check: 'MenuItem', menu_item: admin, active_test: "controller_name == 'menu_items'", published: true
   end
 
