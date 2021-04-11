@@ -1,0 +1,15 @@
+<div class="purchase_item nested-fields">
+  <div class='row'>
+    <%= f.association :school_day, input_html: { class: 'select2' }, wrapper_html: { class: 'col-md-2' } %>
+    <%= f.association :registration, label_method: :full_description, wrapper_html: { class: 'col-md-2' }%> 
+    <%= f.association :animal, wrapper_html: { class: 'col-md-2' }%> 
+    <%= f.input :start_time, wrapper_html: { class: 'col-md-2' }%> 
+    <%= f.input :end_time, wrapper_html: { class: 'col-md-2' }%> 
+   
+    <div class="col-md-2">
+      <%= link_to_remove_association f, class: 'btn btn-danger top-32' do %>
+        <i class="fa fa-fw fa-times"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

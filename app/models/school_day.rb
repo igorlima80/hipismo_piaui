@@ -1,0 +1,2 @@
+class SchoolDay < ApplicationRecord
+end

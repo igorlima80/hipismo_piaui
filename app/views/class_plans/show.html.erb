@@ -1,0 +1,41 @@
+<%= render 'shared/show', box_class: 'info', object: @class_plan%>
+
+
+<div class="card card-outline card-info">
+  <div class="card-header">
+    <h3 class="card-title">
+     Aulas
+    </h3>
+  </div>
+  
+
+  <div class="card-body p-0">  
+    <table class="bootstrap-table-mobile">
+      <thead>
+        <tr>
+          <th data-align='center'>ID</th>
+          <th data-align='left'>Dia de Aula</th> 
+          <th data-align='left'>Início</th>
+          <th data-align='left'>Fim</th>
+          <th data-align='left'>Aluno</th>
+          <th data-align='left'>Animal</th>
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% @class_plan.class_rooms.each do |cr| %>
+          <tr>           
+            <td><%= cr.id %></td>
+            <td><%= cr.school_day.name %></td>
+            <td><%= cr.start_time.strftime("%H:%M") %></td>
+            <td><%= cr.end_time.strftime("%H:%M") %></td>
+            <td><%= cr.registration.full_description %></td>
+            <td><%= cr.animal.name %></td>   
+            
+          </tr>
+        <% end %>
+      </tbody>
+    </table>          
+  </div>
+</div> 

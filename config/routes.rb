@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :class_rooms
+  resources :class_plans
+  resources :school_days
   resources :animals
   resources :payment_types
   resources :services

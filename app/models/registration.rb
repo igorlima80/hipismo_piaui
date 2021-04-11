@@ -29,5 +29,9 @@ class Registration < ApplicationRecord
   has_one :responsible, dependent: :destroy
   accepts_nested_attributes_for :responsible, allow_destroy: true
 
+  def full_description
+    "Matrícula: #{id} - #{person.name} (CPF: #{person.cpf} )" 
+  end
+
 
 end

@@ -1,0 +1,59 @@
+<%= simple_form_for(@class_plan) do |f| %>
+  <div class="card card-outline card-info">
+    <div class="card-header">
+      <h3 class="card-title">
+        Dados do <%= object.class.model_name.human %> 
+        <%= link_to 'Cancelar', eval_with_rescue("#{controller_name}_path"), class: "btn btn-default btn-xs" %>
+        <%= f.submit 'Salvar', class: "btn btn-info btn-xs" %>
+      </h3>
+    </div>
+
+    <div class="card-body">
+      <div class="row">        
+      <%= f.input :start_date, html5: true,  wrapper_html: { class: 'col-md-3' } %>     
+      </div>
+    </div>  
+  </div>
+
+
+  <div class="tab-pane" id="tab_5">
+      <div class="card card-outline card-info">
+        <div class="card-header">
+          <h3 class="card-title">
+            Aulas
+          </h3>
+        </div>
+        <div class="card-body">
+                    
+          <div id="task_types" class='row'>
+            <div class="col-md-12">
+              <%= f.simple_fields_for :class_rooms do |cr| %>
+                <%= render 'class_room_fields', f: cr %>
+              <% end %>
+
+              <div class="control-group">
+                <div class="controls">
+                  <%= link_to_add_association f, :class_rooms do %>
+                    <div class="btn btn-success">
+                      <i class="fa fa-fw fa-plus"></i> Adicionar Aula
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <div class="card card-outline card-info">
+    <div class="card-footer">
+      <%= f.submit class: "btn btn-info" %>
+      <%= link_to 'Cancelar', eval_with_rescue("#{controller_name}_path"), class: "btn btn-default" %>
+    </div>
+  </div>
+
+<% end %>

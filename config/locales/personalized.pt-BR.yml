@@ -80,6 +80,7 @@ pt-BR:
       purchase_item: Item da Compra
       readjustment: Reajuste
       registration: Matrícula
+      school_day: Dia de Aula
       state: Estado
       setting: Configurações
       service_type: Tipo de Serviço
@@ -269,6 +270,9 @@ pt-BR:
         birth_day: Data de Nascimento
         sex: Sexo
         phone_number: Telefone
+      school_days:
+        <<: *BASIC
+        <<: *MODELS  
       state:
         <<: *BASIC
         <<: *MODELS

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @class_room.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @class_room.end_time %>
+</p>
+
+<p>
+  <strong>Class plan:</strong>
+  <%= @class_room.class_plan_id %>
+</p>
+
+<p>
+  <strong>School day:</strong>
+  <%= @class_room.school_day_id %>
+</p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @class_room.registration_id %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @class_room.animal_id %>
+</p>
+
+<%= link_to 'Edit', edit_class_room_path(@class_room) %> |
+<%= link_to 'Back', class_rooms_path %>
