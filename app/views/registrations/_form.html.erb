@@ -11,8 +11,8 @@
     <div class="card-body">
       <div class="row">       
         <%= f.input :registration_date,  html5: true,  wrapper_html: { class: 'col-md-3' } %>  
-        <%= f.input :value, wrapper_html: { class: 'col-md-3' } %>  
-        <%= f.input :payment_day, wrapper_html: { class: 'col-md-3' } %>         
+        <%= f.input :value,  wrapper_html: { class: 'col-md-3' } %>  
+        <%= f.input :payment_day, wrapper_html: { class: 'col-md-3' }, collection: [5,10,15,20] %>         
         <%= f.association :payment_type, wrapper_html: { class: 'col-md-12' } %> 
       </div>
     </div>  

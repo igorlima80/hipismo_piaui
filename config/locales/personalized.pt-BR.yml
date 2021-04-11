@@ -35,6 +35,19 @@ pt-BR:
       status:
         approved: "Aprovado"
         not_approved: "Não Aprovado"
+    registration:
+      have_allergy:
+        dont_have_allergy: Não Tem Alergia
+        have_allergy: Tem Alergia    
+      use_medicine: 
+        dont_use_medicine: Não usa medicamento
+        use_medicine: Usa Medicamento
+      have_surgery: 
+        dont_have_surgery: Não fez cirurgia
+        have_surgery: Fez Cirurgia
+      health_problem: 
+        dont_health_problem: Não tem problemas de saúde
+        health_problem: Tem problema de saúde  
   activerecord:
     models: &MODELS
       accession: Adesão
@@ -48,6 +61,7 @@ pt-BR:
       county: Comarca
       deposit: Depósito
       deduction: Dedução
+      employment: Funcionário
       invoice: Fatura
       kinship: Parentesco
       material_category: Categoria de Produto
@@ -65,6 +79,7 @@ pt-BR:
       purchase: Compra
       purchase_item: Item da Compra
       readjustment: Reajuste
+      registration: Matrícula
       state: Estado
       setting: Configurações
       service_type: Tipo de Serviço
@@ -111,6 +126,11 @@ pt-BR:
       benefit_type:
         <<: *BASIC
         <<: *MODELS  
+      benefit:
+        <<: *BASIC
+        <<: *MODELS 
+        benefit_type: Tipo de Benefício
+        value: Valor   
       bank_check:
         requested_value: Valor Solicitado
         net_paycheck_value: Valor Líquido do Contracheque 
@@ -131,7 +151,15 @@ pt-BR:
         <<: *MODELS  
       deposit:
         operation_date: Data da Operação
-        value: Valor         
+        value: Valor    
+      employment:
+        <<: *BASIC
+        <<: *MODELS
+        occupation: Cargo/Função
+        admission_date: Data de Admissão
+        base_salary: Salário Base    
+        benefit_type: Tipo de Benefício  
+        resignation_date: Data de Demissão
       invoice:
         <<: *BASIC
         <<: *MODELS  
@@ -225,6 +253,22 @@ pt-BR:
         <<: *MODELS
         percentage: Porcentagem
         justification: Justificativa
+      registration:
+        <<: *BASIC
+        <<: *MODELS
+        registration_date: Data de Matrícula
+        value: Valor
+        payment_day: Dia do Pagamento  
+        have_allergy: Tem Alergia?
+        use_medicine: Usa Medicamento?
+        have_surgery: Fez Cirurgia?
+        health_problem: Problemas de Saúde?  
+      responsible:
+        <<: *BASIC
+        <<: *MODELS 
+        birth_day: Data de Nascimento
+        sex: Sexo
+        phone_number: Telefone
       state:
         <<: *BASIC
         <<: *MODELS

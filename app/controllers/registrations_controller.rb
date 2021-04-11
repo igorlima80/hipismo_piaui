@@ -60,7 +60,13 @@ class RegistrationsController < ApplicationController
     end
 
     def get_person
-      @person = Person.find(params[:person_id])
+      unless @registration.nil? || params[:person_id]!= 0
+        @person = Person.find(params[:person_id])
+      else  
+        @person = @registration.person
+      end
+      
+      
     end 
 
     # Only allow a trusted parameter "white list" through.
