@@ -11,6 +11,6 @@ class UtilsController < ApplicationController
     city = nil
     res = ViaCep::Address.new(params['postal_code']) unless params['postal_code'].blank?
     city = City.find_by(ibgeid: res.ibge) if res
-    render json: { data: res, city: city }
+    render json: { data: res, city: self.cities.city }
   end
 end
