@@ -32,8 +32,8 @@ class Person < ApplicationRecord
   accepts_nested_attributes_for :addresses, allow_destroy: true
   accepts_nested_attributes_for :phones, allow_destroy: true
 
-  validates :cpf, cpf: true
-  validates :name, :rg, :birth, presence: true
+  #validates :cpf, cpf: true
+  validates :name, presence: true
   #validates :registration, :admission, :business_email, :place, presence: { unless: :person }
   validates :user, presence: { unless: :person }
  
